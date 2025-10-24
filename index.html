@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Digitale AI - CMS</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navigazione principale">
+      <div class="brand">
+        <span class="brand__logo" aria-hidden="true">IA</span>
+        <div>
+          <h1>Il Digitale AI</h1>
+          <p>Content Management Suite</p>
+        </div>
+      </div>
+      <nav class="nav-tree">
+        <ul class="nav-list" role="tree">
+          <li>
+            <button class="nav-node" data-target="overview" role="treeitem" aria-expanded="true">
+              <span>Dashboard (Home)</span>
+            </button>
+            <ul class="nav-sublist" role="group">
+              <li><button class="nav-leaf" data-target="stats">Statistiche contenuti pubblicati</button></li>
+              <li><button class="nav-leaf" data-target="performance">Performance articoli / video</button></li>
+              <li><button class="nav-leaf" data-target="tasks">Task recenti e notifiche</button></li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-node" data-target="contents" role="treeitem" aria-expanded="true">
+              <span>Contenuti</span>
+            </button>
+            <ul class="nav-sublist" role="group">
+              <li>
+                <button class="nav-node nav-node--child" data-target="articles" aria-expanded="false">Articoli</button>
+                <ul class="nav-sublist">
+                  <li><button class="nav-leaf" data-target="articles-new">Crea nuovo articolo</button></li>
+                  <li><button class="nav-leaf" data-target="articles-drafts">Bozze</button></li>
+                  <li><button class="nav-leaf" data-target="articles-review">In revisione</button></li>
+                  <li><button class="nav-leaf" data-target="articles-published">Pubblicati</button></li>
+                </ul>
+              </li>
+              <li>
+                <button class="nav-node nav-node--child" data-target="videos" aria-expanded="false">Video / Script</button>
+                <ul class="nav-sublist">
+                  <li><button class="nav-leaf" data-target="videos-new">Crea nuovo script/video</button></li>
+                  <li><button class="nav-leaf" data-target="videos-drafts">Bozze</button></li>
+                  <li><button class="nav-leaf" data-target="videos-production">In produzione</button></li>
+                  <li><button class="nav-leaf" data-target="videos-published">Pubblicati</button></li>
+                </ul>
+              </li>
+              <li>
+                <button class="nav-node nav-node--child" data-target="dialogs" aria-expanded="false">Dialoghi / Testi multimediali</button>
+                <ul class="nav-sublist">
+                  <li><button class="nav-leaf" data-target="dialogs-new">Crea nuovo dialogo</button></li>
+                  <li><button class="nav-leaf" data-target="dialogs-drafts">Bozze</button></li>
+                  <li><button class="nav-leaf" data-target="dialogs-review">In revisione</button></li>
+                  <li><button class="nav-leaf" data-target="dialogs-published">Pubblicati</button></li>
+                </ul>
+              </li>
+              <li>
+                <button class="nav-node nav-node--child" data-target="other-content" aria-expanded="false">Altri contenuti</button>
+                <ul class="nav-sublist">
+                  <li><button class="nav-leaf" data-target="templates">Templates</button></li>
+                  <li><button class="nav-leaf" data-target="shared-resources">Risorse condivise</button></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-node" data-target="media" role="treeitem" aria-expanded="false">Media Library</button>
+            <ul class="nav-sublist" role="group">
+              <li><button class="nav-leaf" data-target="media-images">Immagini</button></li>
+              <li><button class="nav-leaf" data-target="media-videos">Video</button></li>
+              <li><button class="nav-leaf" data-target="media-audio">Audio / Voice-over</button></li>
+              <li><button class="nav-leaf" data-target="media-docs">Documenti / PDF</button></li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-node" data-target="exports" role="treeitem" aria-expanded="false">Output / Esportazioni</button>
+            <ul class="nav-sublist" role="group">
+              <li>
+                <button class="nav-node nav-node--child" data-target="auto-publish" aria-expanded="false">Pubblicazione automatica sul sito</button>
+                <ul class="nav-sublist">
+                  <li><button class="nav-leaf" data-target="auto-select">Selezione articoli/video</button></li>
+                  <li><button class="nav-leaf" data-target="auto-schedule">Programmazione pubblicazione</button></li>
+                  <li><button class="nav-leaf" data-target="auto-preview">Anteprima front-end</button></li>
+                </ul>
+              </li>
+              <li>
+                <button class="nav-node nav-node--child" data-target="template-export" aria-expanded="false">Esportazione in template</button>
+                <ul class="nav-sublist">
+                  <li><button class="nav-leaf" data-target="custom-pdf">Presentazioni / PDF personalizzati</button></li>
+                  <li><button class="nav-leaf" data-target="letterhead">Carta intestata</button></li>
+                  <li><button class="nav-leaf" data-target="graphic-templates">Template grafici preimpostati</button></li>
+                </ul>
+              </li>
+              <li>
+                <button class="nav-node nav-node--child" data-target="client-send" aria-expanded="false">Invio automatico al cliente</button>
+                <ul class="nav-sublist">
+                  <li><button class="nav-leaf" data-target="client-select">Selezione destinatari</button></li>
+                  <li><button class="nav-leaf" data-target="client-schedule">Programmazione invio</button></li>
+                  <li><button class="nav-leaf" data-target="client-tracking">Tracking apertura / download</button></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-node" data-target="projects" role="treeitem" aria-expanded="false">Progetti / Campagne</button>
+            <ul class="nav-sublist" role="group">
+              <li><button class="nav-leaf" data-target="project-management">Gestione progetti</button></li>
+              <li><button class="nav-leaf" data-target="task-assignment">Assegnazione task</button></li>
+              <li><button class="nav-leaf" data-target="timeline">Timeline / Gantt</button></li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-node" data-target="team" role="treeitem" aria-expanded="false">Utenti / Team</button>
+            <ul class="nav-sublist" role="group">
+              <li><button class="nav-leaf" data-target="roles">Ruoli e permessi</button></li>
+              <li><button class="nav-leaf" data-target="assignments">Assegnazione contenuti</button></li>
+              <li><button class="nav-leaf" data-target="activity">Attività recenti</button></li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-node" data-target="analytics" role="treeitem" aria-expanded="false">Analytics</button>
+            <ul class="nav-sublist" role="group">
+              <li><button class="nav-leaf" data-target="article-traffic">Traffico articoli</button></li>
+              <li><button class="nav-leaf" data-target="video-views">Visualizzazioni video</button></li>
+              <li><button class="nav-leaf" data-target="social-engagement">Engagement social</button></li>
+              <li><button class="nav-leaf" data-target="custom-reports">Report personalizzati</button></li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-node" data-target="settings" role="treeitem" aria-expanded="false">Impostazioni</button>
+            <ul class="nav-sublist" role="group">
+              <li><button class="nav-leaf" data-target="site-config">Configurazione sito web</button></li>
+              <li><button class="nav-leaf" data-target="categories">Categorie / Tag</button></li>
+              <li><button class="nav-leaf" data-target="integrations">Integrazioni (social, CRM, newsletter)</button></li>
+              <li><button class="nav-leaf" data-target="export-templates">Template esportazione</button></li>
+              <li><button class="nav-leaf" data-target="backup">Backup / Sicurezza</button></li>
+            </ul>
+          </li>
+          <li>
+            <button class="nav-node" data-target="help" role="treeitem" aria-expanded="false">Help / Support</button>
+            <ul class="nav-sublist" role="group">
+              <li><button class="nav-leaf" data-target="documentation">Documentazione</button></li>
+              <li><button class="nav-leaf" data-target="support">Contatti supporto</button></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="workspace" id="workspace" tabindex="-1">
+      <header class="workspace__header">
+        <div>
+          <h2 id="workspace-title">Dashboard (Home)</h2>
+          <p id="workspace-description">Benvenuto nel pannello di controllo centrale. Seleziona una voce dal menu per iniziare.</p>
+        </div>
+        <div class="user-info">
+          <span class="user-avatar" aria-hidden="true">MC</span>
+          <div>
+            <p class="user-name">Martina Conti</p>
+            <p class="user-role">Content Strategist</p>
+          </div>
+        </div>
+      </header>
+      <section class="workspace__content" aria-live="polite">
+        <div class="card-grid" id="content-panels">
+          <article class="card" data-section="overview">
+            <h3>Panoramica del CMS</h3>
+            <p>Gestisci tutti i contenuti digitali della tua organizzazione attraverso un'unica interfaccia intuitiva.</p>
+            <ul>
+              <li>Monitoraggio delle performance in tempo reale.</li>
+              <li>Gestione collaborativa di articoli, video e asset multimediali.</li>
+              <li>Automazione dei flussi di pubblicazione e consegna.</li>
+            </ul>
+          </article>
+          <article class="card" data-section="stats" hidden>
+            <h3>Statistiche contenuti pubblicati</h3>
+            <p>Analizza i contenuti pubblicati nell'ultima settimana.</p>
+            <dl class="stat-list">
+              <div>
+                <dt>Articoli</dt>
+                <dd>24</dd>
+              </div>
+              <div>
+                <dt>Video</dt>
+                <dd>12</dd>
+              </div>
+              <div>
+                <dt>Dialoghi</dt>
+                <dd>8</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="card" data-section="performance" hidden>
+            <h3>Performance articoli / video</h3>
+            <p>Visualizza le metriche chiave di engagement.</p>
+            <ul>
+              <li>CTR medio articoli: <strong>4,2%</strong></li>
+              <li>Retention media video: <strong>62%</strong></li>
+              <li>Condivisioni social: <strong>+18% rispetto alla settimana precedente</strong></li>
+            </ul>
+          </article>
+          <article class="card" data-section="tasks" hidden>
+            <h3>Task recenti e notifiche</h3>
+            <ul class="timeline">
+              <li>
+                <span class="timeline__time">09:45</span>
+                <div>
+                  <strong>Nuova revisione richiesta</strong>
+                  <p>Articolo "Trend AI 2024" assegnato a Luca.</p>
+                </div>
+              </li>
+              <li>
+                <span class="timeline__time">08:30</span>
+                <div>
+                  <strong>Video approvato</strong>
+                  <p>"Campagna primavera" pronto per la pubblicazione.</p>
+                </div>
+              </li>
+              <li>
+                <span class="timeline__time">Ieri</span>
+                <div>
+                  <strong>Backup completato</strong>
+                  <p>Backup automatico notturno riuscito.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+          <article class="card" data-section="media" hidden>
+            <h3>Media Library</h3>
+            <p>Organizza immagini, video e audio con tagging intelligente e ricerca rapida.</p>
+          </article>
+          <article class="card" data-section="exports" hidden>
+            <h3>Output / Esportazioni</h3>
+            <p>Pianifica pubblicazioni multi-canale e automatizza l'invio ai clienti.</p>
+          </article>
+          <article class="card" data-section="projects" hidden>
+            <h3>Progetti / Campagne</h3>
+            <p>Coordina team multidisciplinari con timeline condivise e task assegnati.</p>
+          </article>
+          <article class="card" data-section="team" hidden>
+            <h3>Utenti / Team</h3>
+            <p>Gestisci ruoli, permessi e ownership dei contenuti.</p>
+          </article>
+          <article class="card" data-section="analytics" hidden>
+            <h3>Analytics</h3>
+            <p>Dashboard analitiche personalizzabili con metriche di traffico e engagement.</p>
+          </article>
+          <article class="card" data-section="settings" hidden>
+            <h3>Impostazioni</h3>
+            <p>Configura integrazioni, template e policy di sicurezza.</p>
+          </article>
+          <article class="card" data-section="help" hidden>
+            <h3>Help / Support</h3>
+            <p>Consulta la documentazione o contatta il supporto dedicato.</p>
+          </article>
+          <article class="card" id="dynamic-panel" hidden>
+            <h3 id="dynamic-title"></h3>
+            <p id="dynamic-description"></p>
+            <ul id="dynamic-list" hidden></ul>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
